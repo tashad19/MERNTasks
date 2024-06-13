@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2 CSS</title>
+    <style>
+        /* vertical navbar */
+        .vert-navbar {
+            width: 10rem;
+            border: 1px solid black;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .vert-navbar div {
+            background-color: aquamarine;
+            color: darkblue;
+            padding: 10px;
+        }
+
+        .vert-navbar div:hover {
+            background-color: orange;
+            color: white;
+        }
+
+        /* horizontal navbar */
+        .hor-navbar {
+            width: 20rem;
+            display: flex;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .hor-navbar div{
+            background-color: darkgrey;
+            color: darkblue;
+            padding: 10px;
+            border-right: 1px solid darkblue;
+        }
+
+        .hor-navbar div:hover {
+            background-color: grey;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="vert-navbar">
+        <div class="home">Home</div>
+        <div class="java">Java</div>
+        <div class="css">CSS</div>
+        <div class="html">HTML</div>
+        <div class="bootstrap">Bootstrap</div>
+    </div>
+
+    <div class="hor-navbar">
+        <div class="home">Home</div>
+        <div class="java">Java</div>
+        <div class="html">HTML</div>
+        <div class="css">CSS</div>
+        <div class="bootstrap">Bootstrap</div>
+    </div>
+</body>
+</html>

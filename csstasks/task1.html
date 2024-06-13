@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1 HTML</title>
+    <style>
+        .first {
+            margin: auto;
+            width: 700px;
+        }
+
+        table.first, .first tr, .first th, .first td{
+            border: 1px solid black;
+            background-color: skyblue;
+            border-radius: 10px;
+        }
+
+        .second {
+            border-spacing: 20px;
+            margin: auto;
+        }
+
+        .second tr, .second td{
+            padding: 30px;
+            border: 2px solid rgb(125, 209, 0);
+        }
+
+        /* Different border radius */
+        .smooth {
+            border-radius: 5px;
+        }
+        .smoother {
+            border-radius: 10px;
+        }
+        .smootherer {
+            border-radius: 15px;
+        }
+        .smoothest {
+            border-radius: 20px;
+        }
+        .round {
+            border-radius: 50%;
+        }
+        .diamond {
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <table class="first">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>80</td>
+        </tr>
+    </table>
+
+    <table class="second">
+        <tr>
+            <td class="smoother"></td>
+            <td class="smoother"></td>
+            <td class="smoothest"></td>
+        </tr>
+        <tr>
+            <td class="smootherer"></td>
+            <td></td>
+            <td class="smoothest"></td>
+        </tr>
+        <tr>
+            <td class="round"></td>
+            <td class="smooth"></td>
+            <td class="diamond"></td>
+        </tr>
+    </table>
+</body>
+</html>

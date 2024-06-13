@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5 CSS</title>
+    <style>
+        body {
+            background-color: rgb(213, 215, 90);
+        }
+
+        .navbar {
+            position: absolute;
+        }
+
+        .navbar > div {
+            background-color: white;
+            margin: 10px;
+            padding: 5px;
+            width: 150px;
+            position: relative;
+        }
+
+        /* can also use .navbar > div > div as the selector */
+        .nav-mark {
+            background-color: black;
+            width: 20px;
+            height: 30px;
+            z-index: 1;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .main {
+            margin-left: 200px;
+        }
+
+        h1, p {
+            color: purple;
+        }
+
+        hr {
+            border-width: 1px 0 0 0;
+            border-color: purple;
+            border-style: dashed;
+        }
+
+        .footnote {
+            font-style: italic;
+            width: 130px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="home">
+            <a href="#">Home page</a>
+            <div class="nav-mark"></div>
+        </div>
+        <div class="musings">
+            <a href="#">Musings</a>
+            <div class="nav-mark"></div>
+        </div>
+        <div class="home">
+            <a href="#">My town</a>
+            <div class="nav-mark"></div>
+        </div>
+        <div class="home">
+            <a href="#">Links</a>
+            <div class="nav-mark"></div>
+        </div>
+    </div>
+
+    <div class="main">
+        <h1>My first styled page</h1>
+        <p>Welcome to my style page!</p>
+        <p>It lacks images, but at least it has style. And it has links, even if they don't go anywhere...</p>
+        <p>There should be more here, but I don't know what yet.</p>
+        <hr>
+        <p class="footnote">Made 5 April 2004 by myself.</p>
+    </div>
+</body>
+</html>

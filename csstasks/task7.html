@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color:rgb(165, 45, 99);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            background-color: rgb(110, 32, 67);
+            width: 500px;
+            margin: auto;
+            padding: 20px;
+        }
+        table {
+            margin: auto;
+            
+        }
+        label {
+            color: white;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        #name, #email, #pwd, #phone, #lang, #zip, #about {
+            padding: 5px;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            padding: 5px;
+            font-weight: bold;
+            background-color: white;
+            font-size: large;
+            border-radius: 5px;
+            border: 0;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <table>
+                <tr>
+                    <td>
+                        <label for="name">Name:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="name" placeholder="your name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Email:</label>
+                    </td>
+                    <td>
+                        <input type="email" id="email" placeholder="your email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="pwd">Password:</label>
+                    </td>
+                    <td>
+                        <input type="password" name="pwd" id="pwd">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="phone">Phone Number:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="phone" id="phone">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: white;">
+                        Gender:
+                    </td>
+                    <td>
+                        <label for="male">Male:</label>
+                        <input type="radio" name="male" id="male">
+                        <label for="female">Female:</label>
+                        <input type="radio" name="female" id="female">
+                        <label for="other">Other:</label>
+                        <input type="radio" name="other" id="other">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="lang">language</label>
+                    </td>
+                    <td>
+                        <select name="lang" id="lang">
+                            <option value="" selected disabled>Select language</option>
+                            <option value="english">English</option>
+                            <option value="hindi">Hindi</option>
+                            <option value="kannada">Kannada</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="zip">Zip Code:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="zip" id="zip">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="about">About:</label>
+                    </td>
+                    <td>
+                        <textarea name="about" id="about" placeholder="Write about yourself.."></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Register">
+                    </td>
+                </tr>
+            </table>
+            
+            
+        </form>
+    </div>
+</body>
+</html>

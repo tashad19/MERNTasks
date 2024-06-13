@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6 CSS</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        img {
+            border-radius: 50%;
+            width: 200px;
+            display: block;
+            margin: 20px auto;
+        }
+        .registration-form {
+            padding: 2px;
+            background-color:rgb(243, 243, 243);
+        }
+        form {
+            background-color: white;
+            padding: 10px 30px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+        }
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            display: inline-block;
+        }
+        input[type=submit] {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: rgb(25, 168, 111);
+            border: 0;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: rgb(255, 63, 63);
+            padding: 10px 15px;
+            margin: 32px;
+            color: white;
+            border: 0;
+        }
+        .forgot-pwd {
+            float: right;
+            padding: 10px 15px;
+            margin: 32px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Login Form</h2>
+
+    <div class="registration-form">
+        <form action="">
+            <img src="../images/person.png" alt="error">
+            <label for="username">Username</label>
+            <input type="text" name="uname" id="username" placeholder="Enter Username" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter Password" required>
+            <input type="submit" value="Login">
+
+            <input type="checkbox" name="remember" id="remember">
+            Remember me
+        </form>
+
+        <button>Cancel</button>
+
+        <span class="forgot-pwd">
+            Forgot <a href="#">password?</a>
+        </span>
+    </div>
+
+    
+</body>
+</html>
