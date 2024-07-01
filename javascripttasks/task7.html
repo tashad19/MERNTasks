@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7 Javascript</title>
+    <style>
+        h1{
+            text-align: center;
+            color: blue;
+        }
+        img {
+            width: 400px;
+            position: relative;
+            left: 0;
+        }
+        .btn-container {
+            width: 100px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/train.png" alt="error">
+    <h1>Click the following buttons to handle animation</h1>
+    <div class="btn-container">
+        <button onclick="start()">Start</button>
+        <button onclick="stop()">Stop</button>
+    </div>
+
+    <script>
+        const train = document.getElementsByTagName("img")[0];
+        let leftVal = 0;
+        let animateId;
+
+        function start() { 
+            function animate(){
+                leftVal += 2;
+                train.style.left = leftVal + "px";
+                animateId = requestAnimationFrame(animate);
+            }
+            requestAnimationFrame(animate);
+        }
+
+        function stop() {
+            cancelAnimationFrame(animateId);
+            leftVal = 0;
+            train.style.left = leftVal;
+        }
+    </script>
+</body>
+</html>

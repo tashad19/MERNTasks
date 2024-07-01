@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5 Javascript</title>
+    <style>
+        .grid-container{
+            display: grid;
+        }
+        .grid-item {
+            /* border: 1px solid black; */
+            display: grid;
+            grid-template-columns: 100px minmax(500px, auto);
+            margin: auto;
+        }
+        .grid-inner-item {
+            padding: 5px;
+            margin: 5px 0;
+            /* border: 1px solid black; */
+        }
+
+        input, textarea {
+            margin: 0 20px 0 0;
+            float: left;
+        }
+        textarea {
+            height: 80px;
+            width: 200px;
+        }
+        span {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <form action="" onsubmit="return validateForm()">
+
+        </form>
+        <div class="grid-item">
+            <div class="grid-inner-item">
+                <label for="name">Name:</label>
+            </div>
+            <div class="grid-inner-item">
+                <input type="text" name="name" id="name">
+                <span id="name-warning" style="color: red;">This field is required</span>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-inner-item">
+                <label for="email">Email:</label>
+            </div>
+            <div class="grid-inner-item">
+                <input type="email" name="email" id="email">
+                <span id="email-warning" style="color: red;">A valid email address is required</span>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-inner-item">
+                <label for="name">Website:</label>
+            </div>
+            <div class="grid-inner-item">
+                <input type="text" name="website" id="website">
+                <span id="website-warning" style="color: red;">A valid url is required</span>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-inner-item">
+                <label for="message">Message:</label>
+            </div>
+            <div class="grid-inner-item">
+                <textarea name="message" id="message"></textarea>
+                <span id="message-warning" style="color: red;">This field is required</span>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-inner-item">
+            </div>
+            <div class="grid-inner-item">
+                <input type="submit" value="Submit" onclick="checkForm()">
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        
+        function checkForm(){
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const website = document.getElementById("website").value;
+            const message = document.getElementById("message").value;
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if(name === ""){
+                document.getElementById("name-warning").style.display = "inline";
+            } else {
+                document.getElementById("name-warning").style.display = "none";  
+            }
+
+            if (!emailRegex.test(email)) {
+                document.getElementById("email-warning").style.display = "inline";
+            } else {
+                document.getElementById("email-warning").style.display = "none";
+            }
+
+            if(website === ""){
+                document.getElementById("website-warning").style.display = "inline";
+            } else {
+                document.getElementById("website-warning").style.display = "none";  
+            }
+
+            if(message === ""){
+                document.getElementById("message-warning").style.display = "inline";
+            } else {
+                document.getElementById("message-warning").style.display = "none";  
+            }
+        }
+
+        function validateForm() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const website = document.getElementById("website").value;
+            const message = document.getElementById("message").value;
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if(name!="" && emailRegex.test(email) && website!="" && message!=""){
+                return true;
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

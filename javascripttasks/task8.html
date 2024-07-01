@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5 HTML</title>
+    <style>
+        body {
+            background-image: radial-gradient(farthest-side at 60% 55%, white, rgb(225, 156, 167));
+        }
+
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+        
+        table {
+            margin: auto;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .text {
+            width: 98%;
+        }
+
+        #register {
+            display: block;
+            margin: 20px auto;
+        }
+
+        .warning {
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Registration form</h1>
+    <form action="" onsubmit="return validateForm()">
+        <table>
+            <tr>
+                <th>
+                    <label for="firstname">First Name</label>
+                </th>
+                <td>
+                    <input type="text" id="firstname" class="text" oninput="validateFname()">
+                </td>
+                <td id="fname-text" class="warning"></td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="lastname">Last Name</label>
+                </th>
+                <td>
+                    <input type="text" id="lastname" class="text" oninput="validateLname()">
+                </td>
+                <td id="lname-text" class="warning"></td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="email">Email</label>
+                </th>
+                <td>
+                    <input type="email" id="email" class="text" oninput="validateEmail()">
+                </td>
+                <td id="email-text" class="warning"></td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="password">Password</label>
+                </th>
+                <td>
+                    <input type="password" id="password" class="text" oninput="validatePassword()">
+                </td>
+                <td id="password-text" class="warning"></td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="re-password">Re-enter Password</label>
+                </th>
+                <td>
+                    <input type="password" id="re-password" class="text" oninput="validateRePassword()">
+                </td>
+                <td id="re-password-text" class="warning"></td>
+            </tr>
+            <tr>
+                <th rowspan="2">
+                    Gender
+                </th>
+                <td>
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="male">Male</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label for="female">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="age">Age</label>
+                </th>
+                <td>
+                    <input type="number" id="age" class="text" oninput="validateAge()">
+                </td>
+                <td id="age-text" class="warning"></td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="phone">Phone Number</label>
+                </th>
+                <td>
+                    <input type="text" id="phone" class="text" oninput="validatePhone()">
+                </td>
+                <td id="phone-text" class="warning"></td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="address">Address</label>
+                </th>
+                <td>
+                    <textarea name="address" id="address" rows="6" cols="50" oninput="validateAddress()"></textarea>
+                </td>
+                <td id="address-text" class="warning"></td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="state">State</label>
+                </th>
+                <td>
+                    <input type="text" id="state" class="text" oninput="validateState()">
+                </td>
+                <td id="state-text" class="warning"></td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="country">Country</label>
+                </th>
+                <td>
+                    <select name="country" id="country">
+                        <option value="" disabled selected>Choose your country</option>
+                        <option value="India">India</option>
+                        <option value="Japan">Japan</option>
+                        <option value="USA">USA</option>
+                        <option value="Russia">Russia</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Languages known
+                </th>
+                <td>
+                    <input type="checkbox" name="english" id="english">
+                    <label for="english">English</label>
+                    <input type="checkbox" name="kannada" id="kannada">
+                    <label for="kannada">Kannada</label>
+                    <input type="checkbox" name="hindi" id="hindi">
+                    <label for="hindi">Hindi</label>
+                    <input type="checkbox" name="telugu" id="telugu">
+                    <label for="telugu">Telugu</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" name="agreement" id="agreement">
+                    Hereby I declare all the given details are true
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: right;">
+                    Log in to <a href="#">Ethnus</a> website
+                </td>
+            </tr>
+        </table>
+
+        <input type="submit" value="Register" id="register">
+    </form>
+
+
+    <script>
+        function validateFname() {
+            const fname = document.getElementById("firstname").value;
+            if (fname.length === 0) {
+                document.getElementById("fname-text").innerHTML = "POOR";
+            } else {
+                document.getElementById("fname-text").innerHTML = "";
+            }
+        }
+
+        function validateLname() {
+            const lname = document.getElementById("lastname").value;
+            if (lname.length === 0) {
+                document.getElementById("lname-text").innerHTML = "POOR";
+            } else {
+                document.getElementById("lname-text").innerHTML = "";
+            }
+        }
+
+        function validateEmail() {
+            const email = document.getElementById("email").value;
+            if (email.length === 0) {
+                document.getElementById("email-text").innerHTML = "POOR";
+            } else {
+                document.getElementById("email-text").innerHTML = "";
+            }
+        }
+
+        function validatePassword() {
+            const pwd = document.getElementById("password").value;
+            if (pwd.length === 0) {
+                document.getElementById("password-text").innerHTML = "POOR";
+            } else if (pwd.length < 8) {
+                document.getElementById("password-text").innerHTML = "GOOD";
+            } else {
+                document.getElementById("password-text").innerHTML = "EXCELLENT";
+            }
+        }
+
+        function validateRePassword() {
+            const rePwd = document.getElementById("re-password").value;
+            if (rePwd.length === 0) {
+                document.getElementById("re-password-text").innerHTML = "POOR";
+            } else if (rePwd.length < 8) {
+                document.getElementById("re-password-text").innerHTML = "GOOD";
+            } else {
+                document.getElementById("re-password-text").innerHTML = "EXCELLENT";
+            }
+        }
+
+        function validateAge() {
+            const age = document.getElementById("age").value;
+            if (age.length === 0 || age < 0 || age > 150) {
+                document.getElementById("age-text").innerHTML = "POOR";
+            } else {
+                document.getElementById("age-text").innerHTML = "";
+            }
+        }
+
+        function validatePhone() {
+            const phone = document.getElementById("phone").value;
+            const phoneRegex = /^[0-9]{10}$/;
+            if (!phoneRegex.test(phone)) {
+                document.getElementById("phone-text").innerHTML = "POOR";
+            } else {
+                document.getElementById("phone-text").innerHTML = "";
+            }
+        }
+
+        function validateAddress() {
+            const address = document.getElementById("address").value;
+            if (address.length === 0) {
+                document.getElementById("address-text").innerHTML = "POOR";
+            } else {
+                document.getElementById("address-text").innerHTML = "";
+            }
+        }
+
+        function validateState() {
+            const state = document.getElementById("state").value;
+            if (state.length === 0) {
+                document.getElementById("state-text").innerHTML = "POOR";
+            } else {
+                document.getElementById("state-text").innerHTML = "";
+            }
+        }
+
+        function validateForm() {
+            const fname = document.getElementById("firstname").value;
+            const lname = document.getElementById("lastname").value;
+            const email = document.getElementById("email").value;
+            const pwd = document.getElementById("password").value;
+            const rePwd = document.getElementById("re-password").value;
+            const age = document.getElementById("age").value;
+            const phone = document.getElementById("phone").value;
+            const address = document.getElementById("address").value;
+            const state = document.getElementById("state").value;
+            
+            if (fname !== "" && lname !== "" && email !== "" && pwd !== "" && rePwd !== "" && age.toString().length !== 0 && phone !== "" && address !== "" && state !== "") {
+                return true;
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

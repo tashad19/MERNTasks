@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2 JS</title>
+</head>
+<body>
+    <h1>String with letters in alphabetical order</h1>
+    <p id="input"></p>
+    <p id="output"></p>
+
+    <script>
+        const myStr = "webmaster";
+
+        // There are many ways to reverse the string:-
+        // const output = [...myStr].sort().join("");
+        const output = myStr.split("").sort().join("");
+
+        document.getElementById("input").innerHTML = "Input = \"" + myStr + "\"";
+        document.getElementById("output").innerHTML = "Output = \"" + output +"\"";
+
+    </script>
+</body>
+</html>

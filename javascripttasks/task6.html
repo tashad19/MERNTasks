@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6 Javascript</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c2d85975ac.js" crossorigin="anonymous"></script>
+    <style>
+        .login-container {
+            background-color: rgb(234, 234, 234);
+            max-width: 400px;
+            margin: auto;
+            padding: 40px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-family: "Playfair Display", serif;
+            font-style: italic;
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            box-sizing: border-box;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: rgb(55, 138, 255);
+            border: 0;
+            color: white;
+        }
+
+        .icon-field {
+            position: relative;
+        }
+
+        .icon-field input {
+            width: 100%;
+            padding-left: 50px;
+            border-radius: 4px;
+            border: 1px solid gray;
+        }
+
+        .icon {
+            position: absolute;
+            padding: 12px 10px;
+            top: 10px;
+            font-size: 20px;
+            color: rgb(105, 105, 105);
+            background-color: rgb(185, 185, 185);
+            border: 1px solid gray;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .extra {
+            padding: 20px 0;
+        }
+
+        .login-container a {
+            float: right;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .signup-container {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-container">
+            <form action="">
+                <div class="logo icon-field">
+                    Instagram
+                </div>
+                <div class="username icon-field">
+                    <i class="fa-solid fa-user icon"></i>
+                    <input type="text" name="uname" id="uname" placeholder="Username" oninput="validate()">
+                </div>
+                <div class="password icon-field">
+                    <i class="fa-solid fa-lock icon"></i>
+                    <input type="password" name="pwd" id="pwd" placeholder="Password" oninput="validate()">
+                </div>
+                <input type="submit" value="Log in" id="loginBtn" disabled>
+
+                <div class="extra">
+                    <input type="checkbox" name="remember-user" id="remember">Remember me
+                    <a href="#">Forgot password?</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="signup-container">
+            Don't have an account!
+            <a href="#"> Sign up here.</a>
+        </div>
+    </div>
+
+    <script>
+        function validate() {
+            const uname = document.getElementById("uname").value;
+            const pwd = document.getElementById("pwd").value;
+            const loginBtn = document.getElementById("loginBtn");
+
+            if (uname === "" || pwd.length < 6) {
+                loginBtn.style.backgroundColor = "rgb(55, 138, 255)";
+                loginBtn.setAttribute("disabled", "disabled");
+            } else {
+                loginBtn.style.backgroundColor = "rgb(0, 106, 255)";
+                loginBtn.removeAttribute("disabled");
+            }
+        }
+    </script>
+</body>
+
+</html>

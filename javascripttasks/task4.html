@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4 JS</title>
+</head>
+<body>
+    <button id="dateBtn" onclick="showDate()">show date</button>
+    <p id="date"></p>
+    <button id="timeBtn" onclick="showTime()">show time</button>
+    <p id="time"></p>
+
+    <script>
+        const date = document.getElementById("date");
+        const time = document.getElementById("time");
+        function showDate() {
+            const myDate = new Date();
+            const options = {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+            }
+            date.innerText = myDate.toLocaleDateString("en-IN", options).split(" ").join("/");
+        }
+        function showTime() {
+            const myDate = new Date();
+            time.innerText = myDate.toString();
+        }
+    </script>
+</body>
+</html>
